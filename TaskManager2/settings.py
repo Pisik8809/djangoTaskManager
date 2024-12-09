@@ -81,7 +81,14 @@ WSGI_APPLICATION = 'TaskManager2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'taskmanager_postegsql',
+        'USER': 'taskmanager_postegsql_user',
+        'PASSWORD': 'USmXJ8QRzUmoHFf4p2C9Pt5FcsQ5Yao2',
+        'HOST': 'dpg-ctau9qogph6c73esjni0-a.oregon-postgres.render.com',
+        'PORT': '5432',
+    }
 }
 
 # Password validation
@@ -113,12 +120,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Увімкнути стиснення
+#Enable compression
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 X_FRAME_OPTIONS = 'DENY'
 
-SESSION_COOKIE_SECURE = True  # Доступ до cookies лише через HTTPS
-CSRF_COOKIE_SECURE = True     # Доступ до CSRF cookies лише через HTTPS
-SESSION_COOKIE_HTTPONLY = True  # Захищає від JavaScript-доступу до cookies
-CSRF_COOKIE_HTTPONLY = True     # Захищає від JavaScript-доступу до CSRF cookies
+SESSION_COOKIE_SECURE = True  # Access cookies only via HTTPS
+CSRF_COOKIE_SECURE = True     # Access CSRF cookies only via HTTPS
+SESSION_COOKIE_HTTPONLY = True  # Protects against JavaScript access to cookies
+CSRF_COOKIE_HTTPONLY = True     # Protects against JavaScript access to CSRF cookies
