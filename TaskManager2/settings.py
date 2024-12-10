@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'TaskManager2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'taskmanager_postegsql',
-        'USER': 'taskmanager_postegsql_user',
-        'PASSWORD': 'USmXJ8QRzUmoHFf4p2C9Pt5FcsQ5Yao2',
-        'HOST': 'dpg-ctau9qogph6c73esjni0-a.oregon-postgres.render.com',
+        'NAME': 'taskmanagerpostegsql', 
+        'USER': 'taskmanagerpostegsql_user', 
+        'PASSWORD': 'RVB1n0snBsiiR3JxNzCsGom9FS7Ylh0W', 
+        'HOST': 'dpg-ctc9la1u0jms73csh3t0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
